@@ -178,7 +178,7 @@ jobs:
           echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}" >> $GITHUB_OUTPUT
 
           cat > release.txt << EOF
-          Redmi AX6000 FIP U-Boot BL2 ATF UBOOTMOD
+          Redmi AX6000 FIP U-Boot BL2 ATF ubootmod_OpenWrt
 
           Date de compilation :
           ${{ env.FILE_DATE }}
