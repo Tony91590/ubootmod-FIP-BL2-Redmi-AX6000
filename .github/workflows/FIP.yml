@@ -1,4 +1,4 @@
-name: Redmi-AX6000-FIP-BL2-UBOOTMOD
+name: Redmi-AX6000-FIP-BL2-ubootmod
 
 on:
   repository_dispatch:
