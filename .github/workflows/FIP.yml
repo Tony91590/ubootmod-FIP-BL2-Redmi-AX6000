@@ -1,4 +1,4 @@
-name: Xiaomi-AX3000T-FIP-hanwckf
+name: Redmi-AX6000-FIP-BL2-UBOOTMOD
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ env:
   TZ: Europe/Paris
 
   OPENWRT_NAME: hanwckf
-  DEVICE_NAME: xiaomi_ax3000t-fip
+  DEVICE_NAME: redmi_ax6000-fip-bl2
 
 permissions:
   contents: write
@@ -178,7 +178,7 @@ jobs:
           echo "release_tag=${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}" >> $GITHUB_OUTPUT
 
           cat > release.txt << EOF
-          xiaomi AX3000T FIP U-Boot
+          Redmi AX6000 FIP U-Boot BL2 ATF UBOOTMOD
 
           Date de compilation :
           ${{ env.FILE_DATE }}
@@ -187,7 +187,7 @@ jobs:
           https://github.com/hanwckf/bl-mt798x
 
           Appareil :
-          Xiaomi AX3000T
+          Redmi AX6000
 
           Merci à hanwckf et à tous les contributeurs OpenWrt.
           EOF
