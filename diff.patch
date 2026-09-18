@@ -1,83 +1,55 @@
-From 51605f2382f4eeb08f70b29e45e9b3feac24cd96 Mon Sep 17 00:00:00 2001
-From: 1715173329
-Date: Sat, 27 Dec 2025 23:22:22 +0800
-Subject: [PATCH] uboot-2022: fit: merge code from 1715173329 to support fit
- image
-
----
- .../configs/mt7981_360t7_defconfig            |  3 ++-
- .../configs/mt7981_abt_asr3000_defconfig      |  3 ++-
- .../configs/mt7981_ax3000t_defconfig          |  3 ++-
- .../configs/mt7981_cetron_ct3003_defconfig    |  3 ++-
- .../configs/mt7981_cmcc_a10_defconfig         |  3 ++-
- .../configs/mt7981_cmcc_rax3000m_defconfig    |  3 ++-
- .../configs/mt7981_cudy_tr3000-v1_defconfig   |  1 +
- .../mt7981_h3c_magic-nx30-pro_defconfig       |  3 ++-
- .../configs/mt7981_imou_lc-hx3001_defconfig   |  3 ++-
- .../configs/mt7981_jcg_q30_defconfig          |  3 ++-
- .../configs/mt7981_konka_komi-a31_defconfig   |  3 ++-
- .../configs/mt7981_livinet_zr-3020_defconfig  |  3 ++-
- .../configs/mt7981_nokia_ea0326gmp_defconfig  |  3 ++-
- .../configs/mt7981_wr30u_defconfig            |  3 ++-
- .../configs/mt7986_netcore_n60-pro_defconfig  |  3 ++-
- .../configs/mt7986_netcore_n60_defconfig      |  3 ++-
- .../configs/mt7986_redmi_ax6000_defconfig     |  3 ++-
- .../configs/mt7981_360t7_defconfig            |  1 +
- .../configs/mt7981_abt_asr3000_defconfig      |  1 +
- .../configs/mt7981_ax3000t_defconfig          |  1 +
- .../configs/mt7981_cetron_ct3003_defconfig    |  1 +
- .../configs/mt7981_cmcc_a10_defconfig         |  1 +
- .../configs/mt7981_cmcc_rax3000m_defconfig    |  1 +
- .../configs/mt7981_cudy_tr3000-v1_defconfig   |  1 +
- .../mt7981_h3c_magic-nx30-pro_defconfig       |  1 +
- .../configs/mt7981_imou_lc-hx3001_defconfig   |  1 +
- .../configs/mt7981_jcg_q30_defconfig          |  1 +
- .../configs/mt7981_konka_komi-a31_defconfig   |  1 +
- .../configs/mt7981_livinet_zr-3020_defconfig  |  1 +
- .../configs/mt7981_nokia_ea0326gmp_defconfig  |  1 +
- .../configs/mt7981_wr30u_defconfig            |  1 +
- .../configs/mt7986_netcore_n60-pro_defconfig  |  1 +
- .../configs/mt7986_netcore_n60_defconfig      |  1 +
- .../configs/mt7986_redmi_ax6000_defconfig     |  1 +
- .../arch/arm/dts/mt7981-abt_asr3000.dts       |  4 ++++
- .../arch/arm/dts/mt7981-cetron_ct3003.dts     |  4 ++++
- .../arm/dts/mt7981-cmcc-rax3000m-emmc.dts     |  5 +++++
- .../arch/arm/dts/mt7981-cmcc-rax3000m.dts     |  4 ++++
- .../arch/arm/dts/mt7981-konka_komi-a31.dts    |  2 +-
- .../arch/arm/dts/mt7981-livinet_zr-3020.dts   |  4 ++++
- .../arch/arm/dts/mt7981-nokia-ea0326gmp.dts   |  4 ++++
- .../arch/arm/dts/mt7986a-jdcloud_re-cp-03.dts |  4 ++++
- .../board/mediatek/common/ubi_helper.c        |  4 ++--
- .../board/mediatek/mt7622/bootmenu_emmc.c     |  4 ++--
- .../board/mediatek/mt7981/bootmenu_emmc.c     |  4 ++--
- .../board/mediatek/mt7986/bootmenu_emmc.c     |  4 ++--
- .../board/mediatek/mt7988/bootmenu_emmc.c     |  4 ++--
- .../configs/mt7981_360t7_defconfig            | 17 +++++++-------
- .../configs/mt7981_abt_asr3000_defconfig      | 17 ++++++++------
- .../configs/mt7981_ax3000t_an8855_defconfig   | 17 ++++++--------
- .../configs/mt7981_ax3000t_defconfig          | 17 ++++++--------
- .../configs/mt7981_cetron_ct3003_defconfig    | 19 ++++++++--------
- .../configs/mt7981_cmcc_a10_defconfig         | 22 +++++++++----------
- .../mt7981_cmcc_rax3000m-emmc_defconfig       |  6 ++++-
- .../configs/mt7981_cmcc_rax3000m_defconfig    | 20 +++++++++--------
- .../configs/mt7981_cudy_tr3000-v1_defconfig   | 16 +++++++-------
- .../mt7981_h3c_magic-nx30-pro_defconfig       | 17 +++++++-------
- .../configs/mt7981_imou_lc-hx3001_defconfig   | 18 +++++++--------
- .../configs/mt7981_jcg_q30_defconfig          | 17 +++++++-------
- .../configs/mt7981_konka_komi-a31_defconfig   | 19 ++++++++--------
- .../configs/mt7981_livinet_zr-3020_defconfig  | 19 ++++++++--------
- .../configs/mt7981_nokia_ea0326gmp_defconfig  | 19 ++++++++--------
- .../configs/mt7981_wr30u_defconfig            | 18 +++++++--------
- .../configs/mt7986_jdcloud_re-cp-03_defconfig |  5 ++++-
- .../configs/mt7986_netcore_n60-pro_defconfig  | 17 +++++++-------
- .../configs/mt7986_netcore_n60_defconfig      | 17 +++++++-------
- .../configs/mt7986_redmi_ax6000_defconfig     | 17 +++++++-------
- .../mt7986_tplink_tl-xdr608x_defconfig        | 13 ++++++-----
- .../mt7986_tplink_tl-xtr8488_defconfig        |  8 +++++++
- 70 files changed, 274 insertions(+), 199 deletions(-)
-
-diff --git a/atf-20220606-637ba581b/configs/mt7981_360t7_defconfig b/atf-20220606-637ba581b/configs/mt7981_360t7_defconfig
-index 6378231f5..2d6d7170c 100644
+--- a/uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig
++++ b/uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig
+@@ -5,8 +5,6 @@ CONFIG_ARCH_MEDIATEK=y
+ CONFIG_TEXT_BASE=0x41e00000
+ CONFIG_SYS_MALLOC_F_LEN=0x4000
+ CONFIG_NR_DRAM_BANKS=1
+-CONFIG_ENV_SIZE=0x10000
+-CONFIG_ENV_OFFSET=0x0
+ CONFIG_DEFAULT_DEVICE_TREE="mt7986a-redmi-ax6000"
+ CONFIG_SYS_PROMPT="MT7986> "
+ CONFIG_TARGET_MT7986=y
+@@ -21,7 +19,6 @@ CONFIG_MTK_WEB_FAILSAFE_AFTER_BOOT_FAILURE=y
+ CONFIG_MTK_UBI_SUPPORT=y
+ CONFIG_MTK_UPGRADE_BL2_VERIFY=y
+ # CONFIG_MTK_UPGRADE_IMAGE_VERIFY is not set
+-CONFIG_ENABLE_NAND_NMBM=y
+ CONFIG_FIT=y
+ CONFIG_AUTOBOOT_MENU_SHOW=y
+ CONFIG_AUTOBOOT_MENU_MTK_SHOW=y
+@@ -44,24 +41,26 @@ CONFIG_CMD_GPIO=y
+ CONFIG_CMD_GPIO_READ=y
+ CONFIG_CMD_MMC=y
+ CONFIG_CMD_MTD=y
+-CONFIG_CMD_NMBM=y
+ CONFIG_CMD_TFTPPUT=y
+ CONFIG_CMD_PING=y
+ CONFIG_CMD_SMC=y
+ CONFIG_CMD_MTDPARTS=y
+-CONFIG_MTDIDS_DEFAULT="nmbm0=nmbm0"
+-CONFIG_MTDPARTS_DEFAULT="nmbm0:1024k(bl2),256k(Nvram),256k(Bdata),2048k(factory),2048k(fip),256k(crash),256k(crash_log),112640k(ubi)"
++CONFIG_MTDIDS_DEFAULT="spi-nand0=spi-nand0"
++CONFIG_MTDPARTS_DEFAULT="spi-nand0:1024k(bl2),256k(Nvram),256k(Bdata),2048k(factory),2048k(fip),125440k(ubi)"
+ CONFIG_CMD_GL_BTN=y
+ CONFIG_DOS_PARTITION=y
+ CONFIG_EFI_PARTITION=y
+ CONFIG_PARTITION_TYPE_GUID=y
+ CONFIG_OF_EMBED=y
+ CONFIG_ENV_OVERWRITE=y
+-CONFIG_ENV_IS_IN_MTD=y
+-CONFIG_ENV_MTD_NAME="Nvram"
+-CONFIG_ENV_SIZE_REDUND=0x80000
++CONFIG_ENV_IS_IN_UBI=y
++CONFIG_SYS_REDUNDAND_ENVIRONMENT=y
++CONFIG_ENV_UBI_PART="ubi"
++CONFIG_ENV_UBI_VOLUME="ubootenv"
++CONFIG_ENV_UBI_VOLUME_REDUND="ubootenv2"
+ CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG=y
+ CONFIG_NET_RANDOM_ETHADDR=y
++CONFIG_NET_FORCE_IPADDR=y
+ CONFIG_USE_IPADDR=y
+ CONFIG_IPADDR="192.168.1.1"
+ CONFIG_USE_NETMASK=y
 --- a/atf-20220606-637ba581b/configs/mt7981_360t7_defconfig
 +++ b/atf-20220606-637ba581b/configs/mt7981_360t7_defconfig
 @@ -1,5 +1,6 @@
