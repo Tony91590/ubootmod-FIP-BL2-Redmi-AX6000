@@ -92,3 +92,4 @@ rm -f uboot-mtk-20220606/configs/mt7986_tplink_tl-xdr608x_defconfig.orig
 rm -f uboot-mtk-20220606/configs/mt7986_tplink_tl-xtr8488_defconfig.orig
 rm -f uboot-mtk-20230718-09eda825/cmd/glbtn.c.orig
 rm -f uboot-mtk-20220606/cmd/glbtn.c.orig
+rm -f uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig.orig
