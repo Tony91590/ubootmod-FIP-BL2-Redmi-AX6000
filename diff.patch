@@ -1,3 +1,13 @@
+--- a/build.sh
++++ b/build.sh
+@@ -220,6 +220,7 @@ if [ "$FSTHEME" = "mtk" ] || [ "$FSTHEME" = "MTK" ]; then
+ 	echo "CONFIG_WEBUI_FAILSAFE_UI_MTK=y" >> "$UBOOT_DIR/.config"
+ fi
+ 
++grep -q "CONFIG_ENV_VARS_UBOOT_CONFIG=y" "$UBOOT_DIR/.config" || echo "CONFIG_ENV_VARS_UBOOT_CONFIG=y" >> "$UBOOT_DIR/.config"
+ make -C "$UBOOT_DIR" olddefconfig
+ make -C "$UBOOT_DIR" clean
+ make -C "$UBOOT_DIR" -j $(nproc) all
 --- a/uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig
 +++ b/uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig
 @@ -5,8 +5,6 @@ CONFIG_ARCH_MEDIATEK=y
