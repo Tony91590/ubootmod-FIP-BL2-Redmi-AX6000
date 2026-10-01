@@ -436,8 +436,7 @@
 +		echo "bl2 build fail!"
 +		exit 1
 +	fi
- fi
- 
+ fi 
 --- a/uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig
 +++ b/uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig
 @@ -5,8 +5,6 @@ CONFIG_ARCH_MEDIATEK=y
