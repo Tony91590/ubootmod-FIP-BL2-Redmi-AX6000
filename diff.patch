@@ -437,6 +437,7 @@
 +		exit 1
 +	fi
  fi 
+ 
 --- a/atf-20220606-637ba581b/configs/mt7981_360t7_defconfig
 +++ b/atf-20220606-637ba581b/configs/mt7981_360t7_defconfig
 @@ -1,5 +1,6 @@
