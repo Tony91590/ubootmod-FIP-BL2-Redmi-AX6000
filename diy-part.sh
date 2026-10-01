@@ -3,6 +3,7 @@
 PATCH_FILE="$GITHUB_WORKSPACE/diff.patch"
 patch -p1 < "$PATCH_FILE"
 
+rm -f build.sh.orig
 rm -f atf-20220606-637ba581b/configs/mt7981_360t7_defconfig.orig
 rm -f atf-20220606-637ba581b/configs/mt7981_abt_asr3000_defconfig.orig
 rm -f atf-20220606-637ba581b/configs/mt7981_ax3000t_defconfig.orig
