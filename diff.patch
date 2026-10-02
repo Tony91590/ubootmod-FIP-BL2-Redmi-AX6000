@@ -1744,7 +1744,7 @@ index 71996bf43..2f9dd070e 100644
  	printf("\n");
 --- a/build.sh
 +++ b/build.sh
-@@ -1,360 +1,109 @@
+@@ -1,360 +1,108 @@
  #!/bin/sh
  
 -AUTHOR="Yuzhii"
@@ -1812,10 +1812,10 @@ index 71996bf43..2f9dd070e 100644
 -echo "======================================================================"
 -
 -echo "Trying python3..."
-+UBOOT_DIR=uboot-mtk-20220606
++UBOOT_DIR=uboot-mtk-20230718-09eda825
 +#UBOOT_DIR=uboot-mtk-20230718-09eda825
 +#ATF_DIR=atf-20220606-637ba581b
-+ATF_DIR=atf-20240117-bacca82a8
++ATF_DIR=atf-20220606-637ba581b
 +
 +if [ -z "$SOC" ] || [ -z "$BOARD" ]; then
 +	echo "Usage: SOC=[mt7981|mt7986] BOARD=<board name> MULTI_LAYOUT=[0|1] $0"
@@ -2052,7 +2052,7 @@ index 71996bf43..2f9dd070e 100644
 -    echo "CONFIG_WEBUI_FAILSAFE_UI_MTK=y" >> "$UBOOT_DIR/.config"
 -fi
 -
- grep -q "CONFIG_ENV_VARS_UBOOT_CONFIG=y" "$UBOOT_DIR/.config" || echo "CONFIG_ENV_VARS_UBOOT_CONFIG=y" >> "$UBOOT_DIR/.config"
+-grep -q "CONFIG_ENV_VARS_UBOOT_CONFIG=y" "$UBOOT_DIR/.config" || echo "CONFIG_ENV_VARS_UBOOT_CONFIG=y" >> "$UBOOT_DIR/.config"
  make -C "$UBOOT_DIR" olddefconfig
  make -C "$UBOOT_DIR" clean
 -make -C "$UBOOT_DIR" -j "$(nproc)" all
