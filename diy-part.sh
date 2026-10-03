@@ -3,6 +3,7 @@
 PATCH_FILE="$GITHUB_WORKSPACE/diff.patch"
 patch -p1 < "$PATCH_FILE"
 
+rm -f uboot-mtk-20230718-09eda825/configs/mt7986_redmi_ax6000_defconfig.orig
 rm -f uboot-mtk-20230718-09eda825/cmd/glbtn.c.orig
 rm -f build.sh.orig
 rm -f atf-20220606-637ba581b/configs/mt7981_360t7_defconfig.orig
